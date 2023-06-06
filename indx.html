@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Приложение для загрузки и визуализации данных</title>
+</head>
+<body>
+    <h1>Приложение для загрузки и визуализации данных</h1>
+
+    {% if message %}
+        <p>{{ message }}</p>
+    {% endif %}
+
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".csv">
+        <input type="submit" value="Загрузить">
+    </form>
+
+    {% if plot %}
+        {{ plot|safe }}
+    {% endif %}
+</body>
+</html>
